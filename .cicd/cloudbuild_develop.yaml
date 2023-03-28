@@ -1,0 +1,52 @@
+steps:
+  - name: "docker.io/library/python:3.9"
+    id: Export Secrets
+    entrypoint: /bin/bash
+    args:
+      - -c
+      - |
+        python3 -c 'import os; open("credentials.json", "w").write(os.environ.get("SECRET_KEY", "{}"))'
+        python3 -c 'import os; open(".env", "w").write(os.environ.get("ENV_DATA", ""))'
+        ls -lah
+    env:
+      - "SECRET_KEY=${_CREDENTIALS}"
+      - "ENV_DATA=${_ENV_DATA}"
+
+  - name: "gcr.io/cloud-builders/docker"
+    id: Build Docker Image
+    args:
+      [
+        "build",
+        "-t",
+        "europe-west4-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_REPO_IMAGE_NAME}:latest",
+        ".",
+      ]
+
+  - name: "gcr.io/cloud-builders/docker"
+    id: Push Image to Artifact Registry
+    args:
+      [
+        "push",
+        "europe-west4-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_REPO_IMAGE_NAME}:latest",
+      ]
+
+  # Deploy container image to Cloud Run
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    id: Deploy to Cloud Run
+    entrypoint: gcloud
+    args:
+      - "run"
+      - "deploy"
+      - ${_CLOUD_RUN_SERVICE}
+      - "--image"
+      - "europe-west4-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_REPO_IMAGE_NAME}:latest"
+      - "--region"
+      - "europe-west4"
+      - "--platform"
+      - "managed"
+      - "--allow-unauthenticated"
+      - "--cpu"
+      - "1000m"
+      - "--memory"
+      - "1024Mi"
+timeout: 1200s
