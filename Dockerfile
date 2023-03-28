@@ -1,16 +1,20 @@
-FROM ubuntu:latest
+# Use an official Node.js runtime as a parent image
+FROM node:10
 
-# Set the working directory
+# Set the working directory to /app
 WORKDIR /app
 
-# Copy the files into the container
-COPY . .
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-# Install dependencies
-RUN apt-get update && apt-get install -y curl
+# Install any needed packages specified in package.json
+RUN npm install
 
-# Set the command to run when the container starts
-CMD ["sh", "-c", "echo Hello World! && sleep infinity"]
+# Make port 80 available to the world outside this container
+EXPOSE 80
 
-# Expose port 8080
-EXPOSE 8080
+# Define environment variable
+ENV NAME World
+
+# Run app.js when the container launches
+CMD ["npm", "start"]
