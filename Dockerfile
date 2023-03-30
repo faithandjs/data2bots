@@ -1,21 +1,9 @@
-# From base image node
-FROM node:16
-
-# Create app directory
-RUN mkdir -p /usr/src/app
+FROM node:18.12.0
 WORKDIR /usr/src/app
-
-# Copying all the files from your file system to container file system
-COPY package.json .
-
-# Install all dependencies
-RUN npm install
-
-# Copy other files too
-COPY ./ .
-
-# Expose the port
+COPY package*.json ./
+RUN npm install -g npm@latest
+RUN npm install --legacy-peer-deps
+COPY . .
+RUN npm run build
 EXPOSE 8080
-
-# Command to run app when intantiate an image
-CMD ["npm","start"]
+CMD [ "npm", "start"]

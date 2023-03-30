@@ -1,0 +1,33 @@
+#!/bin/bash
+
+set -e
+
+# This hook formats code to be understandable and uses double quotes.
+echo "Formatting code..."
+prettier --write --single-quote false --ignore-path .gitignore "**/*.{js,json,ts,yml,jsx,tsx}"
+
+
+# this hook ensures that no .env file is committed to the repository.
+for file in $(git diff --cached --name-only | grep -E '\.env$'); do
+  echo "ERROR: File \"$file\" should not be committed to the repository"
+  exit 1
+done
+
+# This hook ensures that there are no Prettier errors.
+prettier --check --ignore-path .gitignore "**/*.{js,json,ts,tsx,jsx,yml}"
+
+# format code with prettier
+prettier --write --single-quote false --ignore-path .gitignore "**/*.{js,json,ts,yml,jsx,tsx}"
+
+# try to fix code with eslint
+eslint --fix --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .
+
+# check for eslint errors
+eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .
+
+# This hook ensures that there are no TypeScript type errors.
+tsc --noEmit --strict
+if [ $? -ne 0 ]; then
+  echo "ERROR: There are TypeScript type errors"
+  exit 1
+fi
