@@ -48,10 +48,4 @@ const isEmptyObj = (obj: object) => {
   return Object.keys(obj).length === 0;
 };
 
-export {
-  isClient,
-  yupResolver,
-  monthOptions,
-  getErrObject,
-  isEmptyObj,
-};
+export { isClient, yupResolver, monthOptions, getErrObject, isEmptyObj };
