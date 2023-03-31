@@ -6,7 +6,7 @@ import { Button } from "./buttons";
 import Link from "next/link";
 
 const navigation = [
-  { name: "About Us", href: "#" },
+  { name: "About Us", href: "/about" },
   { name: "Academy", href: "https://academy.data2bots.com/" },
   { name: "Talent Pipeline", href: "#" },
   { name: "Extendad Team", href: "#" },
