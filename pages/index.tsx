@@ -4,7 +4,7 @@ import Hero from "@/components/landing/Hero";
 import OurPastWorks from "@/components/landing/OurPastWorks";
 import Outline1 from "@/components/landing/Outline1";
 import Outline2 from "@/components/landing/Outline2";
-import Partners from "@/components/landing/Pathners";
+import Partners from "@/components/landing/Partners";
 import WhatWeDo from "@/components/landing/WhatWeDo";
 import LandingPageLayout from "@/layouts/LandingPageLayout";
 import Head from "next/head";
