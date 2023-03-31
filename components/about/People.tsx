@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Container } from "../Container";
-import { ArrowSmallRightIcon} from "@heroicons/react/24/solid"
+import { ArrowSmallRightIcon } from "@heroicons/react/24/solid";
 
 const People = () => {
   return (
@@ -41,7 +41,12 @@ const People = () => {
               for improvement.
             </p>
 
-            <p className=" font-bold flex gap-2 text-secondary">Meet the team <span><ArrowSmallRightIcon className=" w-[20px]"/></span></p>
+            <p className=" font-bold flex gap-2 text-secondary">
+              Meet the team{" "}
+              <span>
+                <ArrowSmallRightIcon className=" w-[20px]" />
+              </span>
+            </p>
           </div>
         </div>
       </Container>
