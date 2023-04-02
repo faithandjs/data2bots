@@ -8,7 +8,34 @@ import Partners from "@/components/landing/Partners";
 import WhatWeDo from "@/components/landing/WhatWeDo";
 import LandingPageLayout from "@/layouts/LandingPageLayout";
 import Head from "next/head";
-import { ReactElement } from "react";
+import React,{ ReactElement } from "react";
+
+const outlines=[
+  {
+    title:"Our pool of talents and consultant are trained and certified adding value to tech teams globaly",
+    note:"We Patnered with top global brands to deliever the best service to our clients and customers We Patnered with top global brands to deliever the best service to our clients and customersWe Patnered ",
+    quote:"Access to the best talents that can transform your team and take productivity to the next level",
+    image:"/Assets/side-img-1.png"
+  },
+  {
+    title:"Our extended team of data professionals Help you speed up your data migration and data pipeline projects",
+    note:"We Patnered with top global brands to deliever the best service to our clients and customers We Patnered with top global brands to deliever the best service to our clients and customersWe Patnered ",
+    quote:"You save alot of engineering time and cost when you work with global talents like ours",
+    image:"/Assets/side-img-2.png"
+  },
+  {
+    title:"Our academy equips you with requisite knowledge to stand out in a global market",
+    note:"We Patnered with top global brands to deliever the best service to our clients and customers We Patnered with top global brands to deliever the best service to our clients and customersWe Patnered ",
+    quote:"Learn from experts with years of indusry experience amd take your career journey to the next level.",
+    image:"/Assets/side-img-3.png"
+  },
+  {
+    title:"Our data engineering team can build entire solutions for your organization based on your preferences and guidelines.",
+    note:"We Patnered with top global brands to deliever the best service to our clients and customers We Patnered with top global brands to deliever the best service to our clients and customersWe Patnered ",
+    quote:"Save time on implementations and forget about downtime if you out source to our data solutions to our team",
+    image:"/Assets/side-img-4.png"
+  },
+]
 
 export default function Home() {
   return (
@@ -20,12 +47,14 @@ export default function Home() {
       <Hero />
       <WhatWeDo />
       <Partners />
-      <Outline1 />
-      <Outline2 />
-      <Outline1 />
-      <Outline2 />
-      <Outline1 />
-      <Outline2 />
+      <div className="bg-[url('/Assets/bg-overlay2.png')]  bg-no-repeat bg-cover">
+      {outlines.map((outline,index)=><React.Fragment key={outline.image}>
+        {
+          (index+1)%2?<Outline1 {...outline}/>:<Outline2 {...outline}/>
+        }
+      </React.Fragment>)}        
+      </div>
+
       <OurPastWorks />
       <Articules />
       <CTAButtom />

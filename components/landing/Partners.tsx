@@ -77,7 +77,7 @@ const partners = {
 };
 const Partners = () => {
   return (
-    <div className="mb-28 md:mb-56">
+    <div className="mb-28 md:mb-64">
       <h3 className=" max-w-4xl px-6 mx-auto text-[28px] text-primary text-center font-medium leading-10 mb-5">
         We Patnered with top global brands to deliever the best service to our
         clients and customers

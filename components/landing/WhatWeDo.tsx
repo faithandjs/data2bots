@@ -17,7 +17,7 @@ const WhatWeDo = () => {
           <div className="flex flex-wrap">
             {[...Array(4)].map((_, index) => (
               <div key={index} className=" md:w-[40%] flex justify-start">
-                <div className="w-[392px] my-[26px]">
+                <div className="w-full sm:w-[392px] my-[26px]">
                   <div className="w-full h-[174px] mb-2 px-[27px] py-[20px] shadow-[-1px_3px_22px_18px_rgba(2,58,110,0.04)] bg-white">
                     <h6 className="mb-[2.75rem] text-primary font-semibold text-[21px]">
                       Data2Bots Talent Pipeline
