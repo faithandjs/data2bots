@@ -3,22 +3,23 @@ import React from "react";
 import { Button } from "../buttons";
 import { Container } from "../Container";
 
-const Outline1 = () => {
+interface Props {
+  image: string;
+  quote: string;
+  title: string;
+  note: string;
+}
+
+const Outline1 = ({ image, quote, title, note }: Props) => {
   return (
     <div className="relative md:h-[800px]">
       <Container className=" md:flex gap-8 mb-7">
         <div className=" md:flex-1 ">
           <div className=" max-w-[505px]">
             <h4 className=" text-[28px] leading-10 font-medium mb-[53px] text-primary mt-7">
-              Our pool of talents and consultant are trained and certified
-              adding value to tech teams globally
+              {title}
             </h4>
-            <p className=" text-[#727891] text-xs mb-[41px]">
-              We Partnered with top global brands to deliverer the best service
-              to our clients and customers We Partnered with top global brands
-              to deliverer the best service to our clients and customersWe
-              Partnered
-            </p>
+            <p className=" text-[#727891] text-xs mb-[41px]">{note}</p>
             <Button cssExtras="!w-fit">Learn More</Button>
           </div>
         </div>
@@ -28,8 +29,7 @@ const Outline1 = () => {
         <div className=" md:flex-1"></div>
         <div className=" md:flex-1 w-full md:w-fit h-fit flex justify-end relative">
           <p className=" text-[28px] leading-10 w-[405px] mt-20 text-left font-normal text-white z-10 relative">
-            Access to the best talents that can transform your team and take
-            productivity to the next level
+            {quote}
             <span>
               <svg
                 width="331"
@@ -46,7 +46,7 @@ const Outline1 = () => {
             </span>
           </p>
           <Image
-            src={"/Assets/side-img-1.png"}
+            src={image}
             width={708}
             height={462}
             alt="side-message img"

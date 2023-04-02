@@ -9,7 +9,7 @@ const navigation = [
   { name: "About Us", href: "/about" },
   { name: "Academy", href: "https://academy.data2bots.com/" },
   { name: "Talent Pipeline", href: "#" },
-  { name: "Extendad Team", href: "#" },
+  { name: "Extendad Team", href: "/teams" },
   { name: "Solution", href: "#" },
   { name: "Careers", href: "#" },
   { name: "FAQ", href: "/#faq" },

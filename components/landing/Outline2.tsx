@@ -3,7 +3,14 @@ import React from "react";
 import { Button } from "../buttons";
 import { Container } from "../Container";
 
-const Outline2 = () => {
+interface Props {
+  image: string;
+  quote: string;
+  title: string;
+  note: string;
+}
+
+const Outline2 = ({ image, quote, title, note }: Props) => {
   return (
     <div className="relative md:h-[800px]">
       <Container className=" md:flex gap-8 mb-7">
@@ -11,15 +18,9 @@ const Outline2 = () => {
         <div className=" md:flex-1 ">
           <div className=" max-w-[505px]">
             <h4 className=" text-[28px] leading-10 font-medium mb-[53px] text-primary mt-7">
-              Our pool of talents and consultant are trained and certified
-              adding value to tech teams globally
+              {title}
             </h4>
-            <p className=" text-[#727891] text-xs mb-[41px]">
-              We Partnered with top global brands to deliverer the best service
-              to our clients and customers We Partnered with top global brands
-              to deliverer the best service to our clients and customersWe
-              Partnered
-            </p>
+            <p className=" text-[#727891] text-xs mb-[41px]">{note}</p>
             <Button cssExtras="!w-fit">Learn More</Button>
           </div>
         </div>
@@ -27,8 +28,7 @@ const Outline2 = () => {
       <div className=" flex w-full mt-32 md:mt-0 md:absolute h-[760px] top-0 left-0 right-0 ">
         <div className=" md:flex-1 w-full md:w-fit h-fit flex justify-start relative">
           <p className=" pl-8 text-[28px] leading-10 w-[405px] mt-20 text-left font-normal text-white z-10 relative">
-            Access to the best talents that can transform your team and take
-            productivity to the next level
+            {quote}
             <span>
               <svg
                 width="331"
@@ -45,7 +45,7 @@ const Outline2 = () => {
             </span>
           </p>
           <Image
-            src={"/Assets/side-img-1.png"}
+            src={image}
             width={708}
             height={462}
             alt="side-message img"
