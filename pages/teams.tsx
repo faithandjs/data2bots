@@ -11,11 +11,10 @@ const Teams = () => {
       <Head>
         <title>Data2bot | Extended Teams</title>
         <meta name="title" content="Extended Teams - Data2Bots"></meta>
-      </Head>   
+      </Head>
       <TeamsHero />
-      <TeamListSection/>
-      <WelcomeSection/>
-   
+      <TeamListSection />
+      <WelcomeSection />
     </>
   );
 };

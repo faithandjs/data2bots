@@ -3,14 +3,14 @@ import React from "react";
 import { Button } from "../buttons";
 import { Container } from "../Container";
 
-interface Props{
-  image:string
-  quote:string
-  title:string
-  note:string
+interface Props {
+  image: string;
+  quote: string;
+  title: string;
+  note: string;
 }
 
-const Outline2 = ({image,quote,title,note}:Props) => {
+const Outline2 = ({ image, quote, title, note }: Props) => {
   return (
     <div className="relative md:h-[800px]">
       <Container className=" md:flex gap-8 mb-7">
@@ -20,9 +20,7 @@ const Outline2 = ({image,quote,title,note}:Props) => {
             <h4 className=" text-[28px] leading-10 font-medium mb-[53px] text-primary mt-7">
               {title}
             </h4>
-            <p className=" text-[#727891] text-xs mb-[41px]">
-             {note}
-            </p>
+            <p className=" text-[#727891] text-xs mb-[41px]">{note}</p>
             <Button cssExtras="!w-fit">Learn More</Button>
           </div>
         </div>
