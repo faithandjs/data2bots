@@ -27,23 +27,22 @@ const CareerIntro = () => {
           </div>
 
           <div className=" flex-col flex-1">
-            <div className=" relative w-fit">              
-            <div className="absolute rounded-full h-[139px] w-[139px] -left-[55px] -top-[55px] bg-[#F7AE57]"/>
+            <div className=" relative w-fit">
+              <div className="absolute rounded-full h-[139px] w-[139px] -left-[55px] -top-[55px] bg-[#F7AE57]" />
               <div className=" w-[395px] h-[483px]">
-              <Image
-              fill
-                className="object-cover object-center"
-                src={"/Assets/about-hero.png"}
-                alt="team picture"
-
-              />                
+                <Image
+                  fill
+                  className="object-cover object-center"
+                  src={"/Assets/about-hero.png"}
+                  alt="team picture"
+                />
               </div>
-
             </div>
           </div>
           <div className="flex-1">
             <h5 className=" text-[38px] text-primary leading-[57px]">
-            We believe strongly in developing every human capacity to deliver maximum value through challenging projects.
+              We believe strongly in developing every human capacity to deliver
+              maximum value through challenging projects.
             </h5>
           </div>
         </div>
@@ -53,4 +52,3 @@ const CareerIntro = () => {
 };
 
 export default CareerIntro;
-

@@ -36,7 +36,7 @@ const Careers = ({ list }: Props) => {
       </Head>
       <CareerHero />
       <CareerIntro />
-      <CareerListSection list={list}/>
+      <CareerListSection list={list} />
     </>
   );
 };
