@@ -11,7 +11,7 @@ const navigation = [
   { name: "Talent Pipeline", href: "#" },
   { name: "Extendad Team", href: "/teams" },
   { name: "Solution", href: "#" },
-  { name: "Careers", href: "#" },
+  { name: "Careers", href: "/careers" },
   { name: "FAQ", href: "/#faq" },
 ];
 

@@ -29,11 +29,12 @@ const Hero = () => {
       // fadeEffect= {{
       //   crossFade: true,
       // }}
+      speed={2000}
       pagination={{
         clickable: true,
       }}
       autoplay={{
-        delay: 3000,
+        delay: 4000,
         disableOnInteraction: false,
       }}
       modules={[EffectFade, Autoplay, Pagination]}
