@@ -8,7 +8,7 @@ export default defineConfig({
   title: 'cooperate-website',
 
   projectId: 't5hswqc3',
-  dataset: 'production',
+  dataset: 'test_environ',
 
   plugins: [deskTool(), visionTool()],
 

@@ -7,6 +7,8 @@ import Outline2 from "@/components/landing/Outline2";
 import Partners from "@/components/landing/Partners";
 import WhatWeDo from "@/components/landing/WhatWeDo";
 import LandingPageLayout from "@/layouts/LandingPageLayout";
+import { GetStaticProps } from "next";
+import { sanityClient } from "../sanity";
 import Head from "next/head";
 import React, { ReactElement } from "react";
 
@@ -45,7 +47,7 @@ const outlines = [
   },
 ];
 
-export default function Home() {
+export default function Home({blogPosts}: {blogPosts: [Post]}) {
   return (
     <>
       <Head>
@@ -68,7 +70,7 @@ export default function Home() {
       </div>
 
       <OurPastWorks />
-      <Articules />
+      <Articules blogPosts={blogPosts}/>
       <CTAButtom />
     </>
   );
@@ -77,3 +79,30 @@ export default function Home() {
 Home.getLayout = function getLayout(page: ReactElement) {
   return <LandingPageLayout>{page}</LandingPageLayout>;
 };
+
+
+export const getStaticProps: GetStaticProps = async () => {
+    const query = `*[_type == "post"]|order(publishedAt desc) [0...6]{
+      _id,
+      title,
+      mainImage,
+      publishedAt,
+      description,
+      slug,
+    }`
+  
+  let blogPosts = []
+  try{
+    blogPosts = await sanityClient.fetch(query)
+  }
+  catch(err){
+    console.log(err)
+    blogPosts = []
+  }
+  return {
+    props: {
+      blogPosts
+    },
+    revalidate: 60 * 5
+  }
+}
