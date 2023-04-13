@@ -1,14 +1,14 @@
-import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemas'
+import {defineConfig} from "sanity"
+import {deskTool} from "sanity/desk"
+import {visionTool} from "@sanity/vision"
+import {schemaTypes} from "./schemas"
 
 export default defineConfig({
-  name: 'default',
-  title: 'cooperate-website',
+  name: "default",
+  title: "cooperate-website",
 
-  projectId: 't5hswqc3',
-  dataset: 'test_environ',
+  projectId: "t5hswqc3",
+  dataset: "test_environ",
 
   plugins: [deskTool(), visionTool()],
 

@@ -13,11 +13,6 @@ for file in $(git diff --cached --name-only | grep -E '\.env$'); do
   exit 1
 done
 
-# This hook ensures that there are no Prettier errors.
-prettier --check --ignore-path .gitignore "**/*.{js,json,ts,tsx,jsx,yml}"
-
-# format code with prettier
-prettier --write --single-quote false --ignore-path .gitignore "**/*.{js,json,ts,yml,jsx,tsx}"
 
 # try to fix code with eslint
 eslint --fix --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .

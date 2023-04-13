@@ -50,21 +50,24 @@ const isEmptyObj = (obj: object) => {
 
 const truncate = (str: string, n: number) => {
   return str?.length > n ? str.slice(0, n - 1) + "..." : str;
-}
+};
 
 const formatBlogDate = (dateString: string): string => {
   const date = new Date(dateString);
-  const options: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric" };
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
   return date.toLocaleDateString("en-US", options);
-}
+};
 
-
-export { 
-  isClient, 
-  yupResolver, 
-  monthOptions, 
-  getErrObject, 
+export {
+  isClient,
+  yupResolver,
+  monthOptions,
+  getErrObject,
   isEmptyObj,
   truncate,
-  formatBlogDate
+  formatBlogDate,
 };

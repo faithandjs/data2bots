@@ -1,31 +1,31 @@
 interface Post {
-    _id: string;
-    title: string;
-    author: {
-        name: string;
-        image: string;
-    };
-    description: string;
-    mainImage?: {
-        asset?: {
-            url?: string;
-        };
-    }
-    slug: {
-        current: string;
-    };
-    body: [object];
-    publishedAt: string;
-    categories: [Category];
-}
-
-interface BlogImage{
+  _id: string;
+  title: string;
+  author: {
+    name: string;
+    image: string;
+  };
+  description: string;
+  mainImage?: {
     asset?: {
-        url?: string;
+      url?: string;
     };
+  };
+  slug: {
+    current: string;
+  };
+  body: [object];
+  publishedAt: string;
+  categories: [Category];
 }
 
-interface Category{
-    _id: string;
-    title: string;
+interface BlogImage {
+  asset?: {
+    url?: string;
+  };
+}
+
+interface Category {
+  _id: string;
+  title: string;
 }

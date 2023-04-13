@@ -47,7 +47,7 @@ const outlines = [
   },
 ];
 
-export default function Home({blogPosts}: {blogPosts: [Post]}) {
+export default function Home({ blogPosts }: { blogPosts: [Post] }) {
   return (
     <>
       <Head>
@@ -70,7 +70,7 @@ export default function Home({blogPosts}: {blogPosts: [Post]}) {
       </div>
 
       <OurPastWorks />
-      <Articules blogPosts={blogPosts}/>
+      <Articules blogPosts={blogPosts} />
       <CTAButtom />
     </>
   );
@@ -80,29 +80,27 @@ Home.getLayout = function getLayout(page: ReactElement) {
   return <LandingPageLayout>{page}</LandingPageLayout>;
 };
 
-
 export const getStaticProps: GetStaticProps = async () => {
-    const query = `*[_type == "post"]|order(publishedAt desc) [0...6]{
+  const query = `*[_type == "post"]|order(publishedAt desc) [0...6]{
       _id,
       title,
       mainImage,
       publishedAt,
       description,
       slug,
-    }`
-  
-  let blogPosts = []
-  try{
-    blogPosts = await sanityClient.fetch(query)
-  }
-  catch(err){
-    console.log(err)
-    blogPosts = []
+    }`;
+
+  let blogPosts = [];
+  try {
+    blogPosts = await sanityClient.fetch(query);
+  } catch (err) {
+    console.log(err);
+    blogPosts = [];
   }
   return {
     props: {
-      blogPosts
+      blogPosts,
     },
-    revalidate: 60 * 5
-  }
-}
+    revalidate: 60 * 5,
+  };
+};
