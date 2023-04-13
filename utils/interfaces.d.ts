@@ -12,6 +12,7 @@ interface JobPost {
     currency: string;
   };
   applicant_access_type: string;
+  applicant_apply_link: string;
   remote: boolean;
   show_pursue_as_career: boolean;
   closing_date: string | null;
@@ -51,4 +52,5 @@ interface jobList {
   updated_at: string;
   type: string;
   remote: boolean;
+  url: string;
 }
