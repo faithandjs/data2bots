@@ -14,9 +14,9 @@ interface Post {
   slug: {
     current: string;
   };
-  body: [object];
+  body?: [object];
   publishedAt: string;
-  categories: [Category];
+  categories?: [Category];
 }
 
 interface BlogImage {

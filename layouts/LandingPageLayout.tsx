@@ -9,7 +9,7 @@ export default function LandingPageLayout({ children }: Props) {
   return (
     <div className="relative">
       <NavBar />
-      <div className=" overflow-hidden">{children}</div>
+      <div className=" overflow-hidden pt-24">{children}</div>
       <Footer />
     </div>
   );

@@ -12,7 +12,7 @@ const navigation = [
   { name: "Extendad Team", href: "/teams" },
   { name: "Solution", href: "#" },
   { name: "Careers", href: "/careers" },
-  { name: "FAQ", href: "/#faq" },
+  { name: "Insights", href: "/insights" },
 ];
 
 export default function NavBar() {
