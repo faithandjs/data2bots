@@ -108,6 +108,7 @@ const Insights = ({ blogPosts }: { blogPosts: [Post] }) => {
                   description={description}
                   publishedAt={publishedAt}
                   slug={slug}
+                  body={[{}]}
                   _id={""}
                   author={{
                     name: "",

@@ -187,6 +187,7 @@ const Insight = ({ post, blogPosts }: { post: Post; blogPosts: [Post] }) => {
                     mainImage={mainImage}
                     description={description}
                     publishedAt={publishedAt}
+                    body={[{}]}
                     slug={slug}
                     _id={""}
                     author={{
