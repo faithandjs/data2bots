@@ -1,170 +1,167 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
-  [type="text"],
-  [type="email"],
-  [type="url"],
-  [type="password"],
-  [type="number"],
-  [type="date"],
-  [type="datetime-local"],
-  [type="month"],
-  [type="search"],
-  [type="tel"],
-  [type="time"],
-  [type="week"],
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
   [multiple],
   textarea,
   select {
-    @apply w-full text-[#354052] p-[0.35rem]  leading-6 bg-[#FAFBFC] rounded-[0.250rem] border border-[#DFE1E6] focus:outline-none focus:ring-1 focus:border-blue-300 placeholder:text-[#7A869A] placeholder:font-normal placeholder:text-sm;
+    @apply w-full py-3 text-[#354052] p-[0.35rem]  leading-6 bg-[#FAFBFC] rounded-[0.250rem] border border-[#DFE1E6] focus:outline-none focus:ring-1 focus:border-blue-300 placeholder:text-[#7A869A] placeholder:font-normal placeholder:text-sm;
   }
-  input[type="text"]:disabled,
-input[type="email"]:disabled,
-input[type="url"]:disabled,
-input[type="password"]:disabled,
-input[type="number"]:disabled{
- @apply bg-[#f3f6fa] text-gray-500
+  input[type='text']:disabled,
+  input[type='email']:disabled,
+  input[type='url']:disabled,
+  input[type='password']:disabled,
+  input[type='number']:disabled {
+    @apply bg-[#f3f6fa] text-gray-500;
+  }
 }
-}
-
 
 @layer components {
-    body {
-      @apply overflow-x-hidden;
-    }
-    .addBorder {
-      @apply rounded-md shadow-md border-[1px] border-[#D7DEE7];
-    }
-    .removeBorder {
-      @apply rounded-none shadow-none border-none;
-    }
-    .selectedSideMenu {
-      @apply px-3 py-2 rounded-md bg-[#EDEFF1] text-[#344053] font-semibold;
-    }
-    .label {
-      @apply block text-xs font-semibold text-[#6B778C] py-2;
-    }
-    .control {
-      @apply block my-1;
-    }
-    .errorControl {
-      @apply border-[#DC4437] border border-solid p-1;
-    }
-    .errorText {
-      @apply text-[#DC4437] text-sm leading-5 items-center mt-1;
-    }
-    .activeNavLink {
-      @apply border-b-[3px] pb-2 border-[#0172CB];
-    }
-    .selected {
-      @apply border-2 border-[#0E64E6] bg-[#EEF5FF];
-    }
-    .notSelected {
-      @apply border border-[#DADEE4] bg-white;
-    }
-    .createBusinessFieldTile {
-      @apply text-[1.625rem] md:text-[2.125rem] font-extrabold;
-    }
-  
-    .outlinedButton {
-      @apply border border-[#0275D8] text-sm font-normal rounded-[0.1875rem] bg-[#f0f9fd] hover:bg-blue-200 text-[#0275D8];
-    }
-    .outlinedWarningBtn {
-      @apply border border-[#DC4437] text-sm font-normal rounded-[0.1875rem] bg-[#EBF8FE] hover:bg-red-200 text-[#DC4437];
-    }
-  
-    .outlinedClearButton {
-      @apply border border-[#0275D8] text-sm font-normal rounded-[0.1875rem] hover:bg-blue-200 text-[#0275D8];
-    }
-  
-    .cancelButton {
-      @apply border-0 bg-[#7E90A8] text-sm font-normal rounded-[0.1875rem] hover:bg-[#919aa7] text-[#FEFFFE];
-    }
-  
-    .isRemoveButton {
-      @apply border-0 bg-[#ED342B] text-sm font-normal rounded-[0.1875rem] hover:bg-[#ed352bbb] text-[#FEFFFE];
-    }
-  
-    .containedButton {
-      @apply bg-[#4388C8] text-sm rounded-[0.1875rem] hover:bg-blue-500 text-white;
-    }
-  
-    .containedDisabledButton {
-      @apply bg-[#0274d881] text-sm font-normal rounded-[0.1875rem] cursor-not-allowed text-white;
-    }
-    .whiteButton {
-      @apply border border-[#0275D8] text-sm font-normal rounded-[0.1875rem] bg-white hover:bg-blue-200 text-[#0275D8];
-    }
-  
-    .pageSizeSelect {
-      @apply text-[#0275D8] text-sm leading-4 border-2 bg-[#f6f7f8] rounded-sm;
-    }
-  
-    .verified {
-      @apply w-auto bg-[#519E47] text-center rounded-[50px] p-2 text-white font-semibold text-[0.75rem];
-    }
-  
-    .pending {
-      @apply bg-[#F7CA5C] text-[#AF5F26] text-center rounded-[50px] p-2  font-semibold text-[0.75rem] w-auto;
-    }
-  
-    .failed {
-      @apply bg-[#AAB7C6] text-[#FFFF]  w-auto text-center  rounded-[50px] p-2 font-semibold text-[0.75rem];
-    }
-  
-    .declinedButton {
-      @apply border-2 border-[#DC4437] text-[#DC4437] bg-transparent;
-    }
-    .toggledButton {
-      @apply bg-[#0275D8] relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-offset-2 focus:ring-blue-400;
-    }
-    .untoggleButton {
-      @apply bg-[#EEEEEE] relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-offset-2 focus:ring-blue-400;
-    }
-
-
-    .rotate-c {
-      --tw-rotate: 220deg;
-      transform: var(--tw-transform);
-    }
+  body {
+    @apply overflow-x-hidden;
+  }
+  .addBorder {
+    @apply rounded-md shadow-md border-[1px] border-[#D7DEE7];
+  }
+  .removeBorder {
+    @apply rounded-none shadow-none border-none;
+  }
+  .selectedSideMenu {
+    @apply px-3 py-2 rounded-md bg-[#EDEFF1] text-[#344053] font-semibold;
+  }
+  .label {
+    @apply block text-sm font-semibold text-[#6B778C] py-2;
+  }
+  .control {
+    @apply block my-1;
+  }
+  .errorControl {
+    @apply border-[#DC4437] border border-solid p-1;
+  }
+  .errorText {
+    @apply text-[#DC4437] text-sm leading-5 items-center mt-1;
+  }
+  .activeNavLink {
+    @apply border-b-[3px] pb-2 border-[#0172CB];
+  }
+  .selected {
+    @apply border-2 border-[#0E64E6] bg-[#EEF5FF];
+  }
+  .notSelected {
+    @apply border border-[#DADEE4] bg-white;
+  }
+  .createBusinessFieldTile {
+    @apply text-[1.625rem] md:text-[2.125rem] font-extrabold;
   }
 
-  input::-webkit-outer-spin-button,
+  .outlinedButton {
+    @apply border border-[#0275D8] text-sm font-normal rounded-[0.1875rem] bg-[#f0f9fd] hover:bg-blue-200 text-[#0275D8];
+  }
+  .outlinedWarningBtn {
+    @apply border border-[#DC4437] text-sm font-normal rounded-[0.1875rem] bg-[#EBF8FE] hover:bg-red-200 text-[#DC4437];
+  }
+
+  .outlinedClearButton {
+    @apply border border-[#0275D8] text-sm font-normal rounded-[0.1875rem] hover:bg-blue-200 text-[#0275D8];
+  }
+
+  .cancelButton {
+    @apply border-0 bg-[#7E90A8] text-sm font-normal rounded-[0.1875rem] hover:bg-[#919aa7] text-[#FEFFFE];
+  }
+
+  .isRemoveButton {
+    @apply border-0 bg-[#ED342B] text-sm font-normal rounded-[0.1875rem] hover:bg-[#ed352bbb] text-[#FEFFFE];
+  }
+
+  .containedButton {
+    @apply bg-[#4388C8] text-sm rounded-[0.1875rem] hover:bg-blue-500 text-white;
+  }
+
+  .containedDisabledButton {
+    @apply bg-[#0274d881] text-sm font-normal rounded-[0.1875rem] cursor-not-allowed text-white;
+  }
+  .whiteButton {
+    @apply border border-[#0275D8] text-sm font-normal rounded-[0.1875rem] bg-white hover:bg-blue-200 text-[#0275D8];
+  }
+
+  .pageSizeSelect {
+    @apply text-[#0275D8] text-sm leading-4 border-2 bg-[#f6f7f8] rounded-sm;
+  }
+
+  .verified {
+    @apply w-auto bg-[#519E47] text-center rounded-[50px] p-2 text-white font-semibold text-[0.75rem];
+  }
+
+  .pending {
+    @apply bg-[#F7CA5C] text-[#AF5F26] text-center rounded-[50px] p-2  font-semibold text-[0.75rem] w-auto;
+  }
+
+  .failed {
+    @apply bg-[#AAB7C6] text-[#FFFF]  w-auto text-center  rounded-[50px] p-2 font-semibold text-[0.75rem];
+  }
+
+  .declinedButton {
+    @apply border-2 border-[#DC4437] text-[#DC4437] bg-transparent;
+  }
+  .toggledButton {
+    @apply bg-[#0275D8] relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-offset-2 focus:ring-blue-400;
+  }
+  .untoggleButton {
+    @apply bg-[#EEEEEE] relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-offset-2 focus:ring-blue-400;
+  }
+
+  .rotate-c {
+    --tw-rotate: 220deg;
+    transform: var(--tw-transform);
+  }
+}
+
+input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 /* Firefox */
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
-  .wrapper-class {
-    padding: 0.3rem;
-    border: 1px solid #dfe1e6;
-    border-radius: 4px;
-  }
-  
-  .editor-class {
-    background-color: #fafbfc;
-    /* padding: .2rem; */
-    border-bottom: 1px solid #ccc;
-  }
-  .toolbar-class {
-    border: 1px solid #ccc;
-    padding: 0;
-  }
+.wrapper-class {
+  padding: 0.3rem;
+  border: 1px solid #dfe1e6;
+  border-radius: 4px;
+}
 
-.swiper-pagination-bullet{
+.editor-class {
+  background-color: #fafbfc;
+  /* padding: .2rem; */
+  border-bottom: 1px solid #ccc;
+}
+.toolbar-class {
+  border: 1px solid #ccc;
+  padding: 0;
+}
+
+.swiper-pagination-bullet {
   @apply !bg-[#D9D9D9] !h-[.5625rem] !w-[.5625rem] !opacity-100;
 }
-.swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active {
   @apply scale-[1.444];
 }
+
