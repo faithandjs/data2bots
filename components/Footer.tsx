@@ -12,7 +12,7 @@ const navigation = {
   About: [
     { name: "Our Story", href: "#" },
     { name: "Benefits", href: "#" },
-    { name: "Team", href: "#" },
+    { name: "Team", href: "/teams" },
     { name: "Careers", href: "#" },
   ],
   Help: [
