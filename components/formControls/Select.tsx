@@ -14,7 +14,7 @@ export default function Select({
   id,
   name,
   placeholder,
-  defaultValue = '',
+  defaultValue = "",
   options,
   optionPlaceHolder,
   onChange,
@@ -43,8 +43,9 @@ export default function Select({
         onChange={(e) => {
           if (!changed) setChanged(true);
           onChange(e.target.value);
-        }}>
-        <option value='' disabled hidden>
+        }}
+      >
+        <option value="" disabled hidden>
           {optionPlaceHolder}
         </option>
         {options.map((option, optionIndex) => (
@@ -56,4 +57,3 @@ export default function Select({
     </div>
   );
 }
-

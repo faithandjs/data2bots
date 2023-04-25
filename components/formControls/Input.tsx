@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useFormContext } from 'react-hook-form';
+import React, { useState } from "react";
+import { useFormContext } from "react-hook-form";
 import {
   EyeIcon,
   EyeSlashIcon,
   InformationCircleIcon,
-} from '@heroicons/react/24/solid';
-import { getErrObject } from '../../utils/helpers';
+} from "@heroicons/react/24/solid";
+import { getErrObject } from "../../utils/helpers";
 
 interface Props {
   label?: string;
@@ -31,22 +31,20 @@ const Input = ({
   topClass,
   ...rest
 }: Props) => {
-  //AREAS COMMENTED OUT ARE DEPENDENT ON FORMSTATE'S FUNCTIONALITY
-
-  // const { formState, register } = useFormContext();
+  const { formState, register } = useFormContext();
   const [open, setOpen] = useState(false);
-  const fieldType = type ? type : 'text';
+  const fieldType = type ? type : "text";
 
   return (
-    <div className='relative control '>
+    <div className="relative control ">
       {label && (
-        <label className='label' htmlFor={name}>
-          {label}{' '}
+        <label className="label" htmlFor={name}>
+          {label}{" "}
           {required ? (
-            <i className='text-sm font-semibold text-[#0275D8]'>*</i>
+            <i className="text-xs font-semibold text-[#0275D8]">*</i>
           ) : null}
           {miniLabel && (
-            <span className='text-xs text-yellow-500 !font-normal'>
+            <span className="text-xs text-yellow-500 !font-normal">
               &nbsp; {miniLabel}
             </span>
           )}
@@ -54,38 +52,38 @@ const Input = ({
       )}
       <input
         className={`${
-          ''
-          // formState?.errors[name] && !dontShowError && "errorControl"
-        } ${fieldType === 'password' && ''} `}
+          formState?.errors[name] && !dontShowError && "errorControl"
+        } ${fieldType === "password" && ""} `}
         type={
-          fieldType === 'password' ? (open ? 'text' : fieldType) : fieldType
+          fieldType === "password" ? (open ? "text" : fieldType) : fieldType
         }
-        // {...register(name)}
+        {...register(name)}
         id={name}
         placeholder={placeholder}
         onBlur={onBlur}
-        autoComplete='off'
+        autoComplete="off"
         {...rest}
       />
-      {fieldType === 'password' && (
+      {fieldType === "password" && (
         <span
           className={`absolute cursor-pointer right-2 ${
-            topClass ? topClass : 'top-[2.6rem]'
-          }`}>
+            topClass ? topClass : "top-[2.6rem]"
+          }`}
+        >
           {open ? (
             <EyeSlashIcon
-              className='w-4 h-4'
+              className="w-4 h-4"
               onClick={() => setOpen((prv) => !prv)}
             />
           ) : (
             <EyeIcon
-              className='w-4 h-4'
+              className="w-4 h-4"
               onClick={() => setOpen((prv) => !prv)}
             />
           )}
         </span>
       )}
-      {/* <div className="errorText text-xs flex items-start ">
+      <div className="errorText text-xs flex items-start ">
         {!!getErrObject(name, formState?.errors) && !dontShowError && (
           <>
             <span className=" ">
@@ -94,10 +92,9 @@ const Input = ({
             {getErrObject(name, formState?.errors)?.message}
           </>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };
 
 export { Input };
-
